@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 .remove-assignment-content {
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
@@ -8,11 +11,41 @@
   transform: translate(-50%, -50%);
 }
 
+/* HERO CONTAINER */
 .hero-container {
-  background-color: #403d58;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(/assets/hawaii.jpg) center / cover no-repeat;
   color: #fff;
   height: 100vh;
 }
+/* Hero Heading */
+.hero-container h1{
+  font-size: 8vw;
+  text-align: center;
+  margin-inline: 1rem;
+  font-family: "bello-pro", sans-serif;
+}
+/* Content Anchor Tag Arrow */
+.hero-container li{
+  margin-top: 5rem;
+  width: 30px;
+  height: 30px;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+  border-radius: 5px;
+  transform: rotate(45deg);
+  color: white;
+  cursor: pointer;
+  transition: all 400ms;
+}
+/* Arrow Hover */
+.hero-container li:hover{
+  scale: 1.5;
+}
+
 
 .content-container {
   background-color: #dbd56e;
