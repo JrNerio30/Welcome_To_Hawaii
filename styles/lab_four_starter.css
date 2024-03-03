@@ -23,7 +23,7 @@ html{
 }
 /* Hero Heading */
 .hero-container h1{
-  font-size: 8vw;
+  font-size: clamp(5rem, 8vw, 10vw);
   text-align: center;
   margin-inline: 1rem;
   font-family: "bello-pro", sans-serif;
@@ -45,6 +45,15 @@ html{
 .hero-container li:hover{
   scale: 1.5;
 }
+
+/* Media Query for Hero Banner Section */
+  @media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 1200px) {
+
+}
+
 
 
 .content-container {
