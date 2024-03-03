@@ -17,7 +17,7 @@ html{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url(/assets/hawaii.jpg) center / cover no-repeat;
+  background: url(../assets/hawaii.jpg) center/cover no-repeat;
   color: #fff;
   height: 100vh;
 }
