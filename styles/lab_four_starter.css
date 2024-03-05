@@ -211,12 +211,55 @@ html{
   }
 }
 
-
+/* ACCORDION SECTION MOBILE */
 .accordion-container {
-  background-color: #fc7753;
-  color: #fff;
   height: 100vh;
 }
+.accordion-container li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-top: none;
+  border-bottom: 1px solid black ;
+  border-inline: none;
+}
+.accordion-container button{
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-top: 1px solid black;
+  border-bottom: none;
+  border-inline: none;
+  padding: 18px;
+  font-size: 30px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.minus{
+  display: none;
+}
+.active, .plus:hover{
+  color: red;
+}
+
+
+.panel{
+  padding: 10px 18px;
+  display: none;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1500px) {
+  .accordion-container{
+    margin: 8rem 15rem;
+  }
+}
+
+
+
 
 .footer-container {
   background-color: #f2efea;
