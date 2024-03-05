@@ -16,7 +16,7 @@ html{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url(../assets/hawaii.jpg) center / cover no-repeat fixed;
+  background: url(../assets/hawaii.jpg) center/cover no-repeat;
   color: #fff;
   height: 100vh;
 }
@@ -43,6 +43,12 @@ html{
 /* Arrow Hover */
 .hero-container li:hover{
   scale: 1.5;
+}
+/* Smaller Screens to Largest */
+@media screen and (min-width: 1200px) {
+  .hero-container{
+    background: url(../assets/hawaii.jpg) center/cover no-repeat fixed;
+  }
 }
 /* The minimum height of the content container */
 /* MOBILE */
