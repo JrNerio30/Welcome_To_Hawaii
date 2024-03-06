@@ -64,7 +64,7 @@ html{
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
-  margin-inline: 3rem;
+  margin-inline: 2rem;
 }
 /* Content body text */
 .content-container p{
@@ -116,7 +116,7 @@ html{
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  margin-inline: 3rem;
+  margin-inline: 2rem;
 }
 /* Tablet
   ***Is thinking about what to add here, doesn't seem have any issue***
@@ -135,37 +135,11 @@ html{
   }
 
 }
-/* Smaller Laptops */
-@media screen and (min-width: 1200px) {
-  .content-container{
-    margin: 8rem 15rem;
-  }
-/* Cool  Image effect only for smaller latop - larger screen */
-  .content-container .image-1{
-    transition: all 400ms;
-    cursor: pointer;
-  }
-/* Cool Hover Image effect */
-  .content-container .image-1:hover{
-    transform: translateX(0.8rem) translateY(-0.8rem);
-    box-shadow: -3rem 3rem 0px 2px black;
-  }
-  /* Cool  Image effect only for smaller latop - larger screen */
-  .content-container .image-2{
-    transition: all 400ms;
-    cursor: pointer;
-  }
-  /* Cool Hover Image effect */
-  .content-container .image-2:hover{
-    transform: translateX(-0.8rem) translateY(-0.8rem);
-    box-shadow: 3rem 3rem 0px 2px black;
-  }
-}
 /* Desktop/larger laptops */
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1200px) {
   /* Adds a grid margin or border margin to the content for larger screen */
   .content-container{
-    margin: 8rem 15rem;
+    margin: 8rem 10rem;
   }
   /* Second Content's direction changes to row */
   .content-container li{
@@ -213,8 +187,10 @@ html{
 
 /* ACCORDION SECTION MOBILE */
 .accordion-container {
-  height: 100vh;
+  min-height: 50vh;
+  margin-bottom: 4rem;
 }
+/* All of the 3 list of accordions */
 .accordion-container li{
   display: flex;
   align-items: center;
@@ -223,11 +199,14 @@ html{
   border-top: none;
   border-bottom: 1px solid black ;
   border-inline: none;
+  margin-block: 0.2rem;
 }
+/* Accordion Button */
 .accordion-container button{
   display: flex;
   justify-content: space-between;
   background-color: white;
+  color: black;
   border-top: 1px solid black;
   border-bottom: none;
   border-inline: none;
@@ -237,24 +216,28 @@ html{
   width: 100%;
   cursor: pointer;
 }
-
+/* Still needs work, for the minus icon to show when click */
 .minus{
   display: none;
 }
-.active, .plus:hover{
-  color: red;
-}
-
-
+/* The pane/accordion body text */
 .panel{
   padding: 10px 18px;
   display: none;
   overflow: hidden;
 }
-
-@media screen and (min-width: 1500px) {
+/* Tablets */
+@media screen and (min-width: 768px) {
+  /* Margins around the accordion section */
   .accordion-container{
-    margin: 8rem 15rem;
+    margin: 8rem 11rem 5rem 11rem;
+  }
+}
+/* Large desktops/laptops */
+@media screen and (min-width: 1500px) {
+  /* Margins around the accordion section */
+  .accordion-container{
+    margin: 8rem 10rem 5rem 10rem;
   }
 }
 
