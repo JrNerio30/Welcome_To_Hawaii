@@ -201,7 +201,7 @@ html{
   border-inline: none;
   margin-block: 0.2rem;
 }
-/* Accordion Button */
+/* Accordion Button spaced between the label and the icon */
 .accordion-container button{
   display: flex;
   justify-content: space-between;
@@ -216,16 +216,31 @@ html{
   width: 100%;
   cursor: pointer;
 }
-/* Still needs work, for the minus icon to show when click */
-.minus{
-  display: none;
+.accordion-container .panel p{
+  margin-inline:1rem ;
 }
-/* The pane/accordion body text */
-.panel{
-  padding: 10px 18px;
-  display: none;
+/* Accordion Icons before click*/
+.accordion-container li .acc-icon::before{
+  content: "+";
+}
+/* Accordion Icons after/active click */
+.accordion-container li.active .acc-icon::before{
+  content: "-";
+}
+/* Accordion before = height of 0 */
+.accordion-container li .panel{
+  position: relative; 
   overflow: hidden;
+  overflow-y: auto;
+  height: 0;
+  transition: all 400ms;
 }
+/* Accordion after = height of 120px, showing the panel */
+.accordion-container li.active .panel{
+  min-height: 120px;
+  padding: 10px 18px;
+}
+
 /* Tablets */
 @media screen and (min-width: 768px) {
   /* Margins around the accordion section */
@@ -267,11 +282,12 @@ html{
   font-weight: bold;
 }
 /* Footer links texts */
-.footer-links p{
+.footer-links a{
+  color: white;
   text-decoration: underline;
   cursor: pointer;
 }
-.footer-links p:hover{
+.footer-links a:hover{
   color: lightblue;
 }
 /* Footer google maps */
