@@ -14,6 +14,15 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+// Copyright year and Aloha :D
+const currentDate = new Date();
+const aloha = "Aloha"
+const year = currentDate.getFullYear();
+const result = `${year} ${aloha}`
+ document.getElementById("copyRightYearAloha").outerHTML = result
+
+
+
 
 
 
