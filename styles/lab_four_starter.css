@@ -1,4 +1,5 @@
 /* Smooth scroll behavior */
+/* Each and every querries are at the very end of each sections or container styles. */
 html{
   scroll-behavior: smooth;
 }
@@ -184,7 +185,6 @@ html{
     box-shadow: 3rem 3rem 0px 2px black;
   }
 }
-
 /* ACCORDION SECTION MOBILE */
 .accordion-container {
   min-height: 50vh;
@@ -240,13 +240,71 @@ html{
     margin: 8rem 10rem 5rem 10rem;
   }
 }
-
-
-
-
+/* Footer MOBILE */
 .footer-container {
-  background-color: #f2efea;
+  background-color: black;
+  min-height: 40vh;
+  color: white;
+}
+/* footer list container that aligns just the list */
+.footer-container li{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; 
+  margin-bottom: 2rem;
+}
+/* Footer Information margins for mobile */
+.footer-info{
+  margin: 2rem;
+}
+/* Footer links margins for mobile */
+.footer-links{
+  margin: 2rem;
+}
+/* Footer info and links bolded headings */
+.footer-info h2,
+.footer-links h2{
+  font-weight: bold;
+}
+/* Footer links texts */
+.footer-links p{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer-links p:hover{
+  color: lightblue;
+}
+/* Footer google maps */
+.footer-container iframe{
   width: 100%;
-  height: 300px;
-  position: relative;
+  height: 12rem;
+} 
+/* Copyright @ 2024 Aloha */
+.copyright{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+/* Smallest to largest destops and laptops */
+@media screen and (min-width: 1200px) {
+  /* Footer Information Spacing with width to give */
+  .footer-info{
+    width: 20rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
+  }
+  /* Footer links aligns with the information layout grid */
+  .footer-links{
+    margin-top: 5rem;
+  }
+  /* footer container changes to flex row for larger devices */
+  .footer-container li{
+    flex-direction: row;
+  }
+  /* the iframe/google maps becomes smaller to fit in right on the footer */
+  .footer-container iframe{
+    margin: 5rem;
+    max-width: 30rem;
+  } 
 }
