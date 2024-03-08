@@ -237,6 +237,7 @@ html, body{
   font-size: 30px;
   width: 100%;
   cursor: pointer;
+  text-align: left;
 }
 /* Accordion Icons before click*/
 .accordion-container li .acc-icon::before{
