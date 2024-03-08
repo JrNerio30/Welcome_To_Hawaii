@@ -76,6 +76,7 @@ html, body{
 /* Content body text */
 .content-container p{
   font-size: 20px;
+  color: black;
 }
 /* Content Image */
 .content-container img{
