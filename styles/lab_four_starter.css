@@ -145,7 +145,7 @@ html, body{
   }
 }
 /* Desktop/larger laptops */
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1300px) {
   /* Adds a grid margin or border margin to the content for larger screen */
   .content-container{
     margin: 8rem 10rem;
