@@ -1,7 +1,8 @@
 /* Smooth scroll behavior */
 /* Each and every querries are at the very end of each sections or container styles. */
-html{
+html, body{
   scroll-behavior: smooth;
+  font-family: 'bello-pro' sans-serif;
 }
 /* HERO CONTAINER */
 .hero-container {
@@ -10,17 +11,17 @@ html{
   align-items: center;
   flex-direction: column;
   background: url(../assets/hawaii.jpg) center/cover no-repeat;
-  color: #fff;
   height: 100vh;
 }
 /* Hero Heading */
 .hero-container h1{
+  color: #fff;
   font-size: 10vw;
   text-align: center;
   margin-inline: 1rem;
   font-family: "bello-pro";
 }
-/* Content Anchor Tag Arrow */
+/* Content Anchor Tag Arrow button */
 .hero-container li{
   margin-top: 5rem;
   width: 30px;
@@ -33,7 +34,7 @@ html{
   cursor: pointer;
   transition: all 400ms;
 }
-/* Arrow Hover */
+/* When arrow Hover */
 .hero-container li:hover{
   scale: 1.5;
 }
@@ -54,13 +55,18 @@ html{
   margin-top: 3rem;
 }
 /* for the whole content inside the unordered list */
+/* Reverses the order from content text -> image, to image -> content text,
+   When shrink to mobile.
+*/
 .content-container li{
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column-reverse;
 }
 /* for the heading, body text and button */
+/* NOTE: Margin-Inline's for Mobile.
+   Checkout line: 163-165.
+*/
 .first-description{
   margin-top: 3rem;
   display: flex;
@@ -70,10 +76,9 @@ html{
 /* Content body text */
 .content-container p{
   font-size: 20px;
-  font-weight: 100;
 }
 /* Content Image */
-.content-container .image-1{
+.content-container img{
   width: 100%;
   max-width: 515px;
   height: auto;
@@ -82,6 +87,7 @@ html{
 .content-container a{
   text-decoration: none;
   color: black;
+  max-width: 7.2rem;
   border: none;
   font-weight: 600;
   font-size: 17px;
@@ -94,25 +100,31 @@ html{
 }
 /* when hover effect */
 .content-container a:hover{
+  background-color: aquamarine;
   text-decoration: underline;
 }
 /* when click */
 .content-container a:active{
   opacity: 0.7;
 }
-/* For the second content */
+/* For the second anchor tag only: max-width --> "Explore ->" */
+/* It's not the same width as the "Learn More ->" anchor tag,
+   so I decided to use different selector to target the second anchor tag.
+*/
+.second-description a{
+  max-width: 5.3rem;
+}
+/* For the second content for mobile */
 .content-container .second-content{
   flex-direction: column;
-}
-/* Secont content's image */
-.content-container .image-2{
-  width: 100%;
-  max-width: 515px;
-  height: auto;
 }
 /* Secont content's description */
 /* FOR MOBILE: the display flex direction changes to column. */
 /* THEN FOR LARGER SCREEN: line 176 - 180 (changes to row) */
+/* NOTE: Margin-Inline's for Mobile.
+   Checkout line: 166-168.
+*/
+/* Different Margins from the first description to align the images vertically*/
 .second-description{
   margin-top: 5rem;
   display: flex;
@@ -127,17 +139,12 @@ html{
     margin: 8rem 10rem;
   }
   /* Adds Border Raduis Tablet - larger screen */
-  .content-container .image-1{
+  .content-container img{
     border-radius: 10px;
   }
-  /* Adds Border Raduis Tablet */
-  .content-container .image-2{
-    border-radius: 10px;
-  }
-
 }
 /* Desktop/larger laptops */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   /* Adds a grid margin or border margin to the content for larger screen */
   .content-container{
     margin: 8rem 10rem;
@@ -152,11 +159,12 @@ html{
   /* For the second content */
   .content-container .second-content{
     flex-direction: row;
-    margin-top: 5rem;
-  }  
-  .first-description{
-    margin-inline: 0rem;
+    margin-top: 7rem;
   }
+  /* Removes the margin inline for both first and 
+     second description.
+  */
+  .first-description,
   .second-description{
     margin-inline: 0rem;
   }
@@ -172,14 +180,20 @@ html{
     transform: translateX(0.8rem) translateY(-0.8rem);
     box-shadow: -3rem 3rem 0px 2px black;
   }
-  /* Cool  Image effect only larger screen */
+  /* Cool  Image effect only larger screen
+     Different margin property, this selector is to the right and 
+     the other is left.
+  */
   .content-container .image-2{
     border-radius: 10px;
     margin-right: 5rem;
     transition: all 400ms;
     cursor: pointer;
   }
-    /* Cool Hover Image effect */
+    /* Cool Hover Image effect
+       Different hover direction, this one is to the left top corner
+       and the other is right top corner. 
+    */
   .content-container .image-2:hover{
     transform: translateX(-0.8rem) translateY(-0.8rem);
     box-shadow: 3rem 3rem 0px 2px black;
@@ -188,7 +202,7 @@ html{
 /* ACCORDION SECTION MOBILE */
 .accordion-container {
   min-height: 50vh;
-  margin-bottom: 4rem;
+  margin-block: 3rem;
 }
 /* All of the 3 list of accordions */
 .accordion-container li{
@@ -196,10 +210,18 @@ html{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-top: none;
-  border-bottom: 1px solid black ;
-  border-inline: none;
   margin-block: 0.2rem;
+}
+/* Paragraph Text to black */
+.accordion-content p{
+  color: black;
+}
+/* This border bottom is only for the third accordion
+   content("Cultural Immersion").
+   So that it doesn't add border bottom the the other two.
+*/
+.borderBottom-AC3{
+  border-bottom: 1px solid black ;
 }
 /* Accordion Button spaced between the label and the icon */
 .accordion-container button{
@@ -212,12 +234,8 @@ html{
   border-inline: none;
   padding: 18px;
   font-size: 30px;
-  text-align: left;
   width: 100%;
   cursor: pointer;
-}
-.accordion-container .panel p{
-  margin-inline:1rem ;
 }
 /* Accordion Icons before click*/
 .accordion-container li .acc-icon::before{
@@ -235,27 +253,21 @@ html{
   height: 0;
   transition: all 400ms;
 }
-/* Accordion after = height of 120px, showing the panel */
+/* Accordion after = height of 120px, showing the panel/the paragraph text */
 .accordion-container li.active .panel{
   min-height: 120px;
   padding: 10px 18px;
 }
-/* Accordion after = height of 120px, showing the panel */
-.accordion-container li.active .panel{
-  min-height: 120px;
-  padding: 10px 18px;
-}
-
-/* Tablets */
+/* Tablet devices */
 @media screen and (min-width: 768px) {
-  /* Margins around the accordion section */
+  /* Margins around the accordion container section */
   .accordion-container{
     margin: 8rem 11rem 5rem 11rem;
   }
 }
 /* Large desktops/laptops */
 @media screen and (min-width: 1500px) {
-  /* Margins around the accordion section */
+  /* Margins around the accordion container section */
   .accordion-container{
     margin: 8rem 10rem 5rem 10rem;
   }
@@ -264,27 +276,26 @@ html{
 .footer-container {
   background-color: black;
   min-height: 40vh;
+}
+/* Footer container heading and pragraph */
+.footer-container h2, p{
   color: white;
+}
+/* Footer info and links bolded headings */
+.footer-container h2{
+  font-weight: bold;
 }
 /* footer list container that aligns just the list */
 .footer-container li{
   display: flex;
   justify-content: space-between;
   flex-direction: column; 
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
-/* Footer Information margins for mobile */
-.footer-info{
+/* Footer Information and links margin for mobile */
+.footer-info,
+.footer-links {
   margin: 2rem;
-}
-/* Footer links margins for mobile */
-.footer-links{
-  margin: 2rem;
-}
-/* Footer info and links bolded headings */
-.footer-info h2,
-.footer-links h2{
-  font-weight: bold;
 }
 /* Footer links texts */
 .footer-links a{
@@ -292,8 +303,9 @@ html{
   text-decoration: underline;
   cursor: pointer;
 }
+/* footer links hover effect */
 .footer-links a:hover{
-  color: lightblue;
+  color: aquamarine;
 }
 /* Footer google maps */
 .footer-container iframe{
@@ -302,22 +314,20 @@ html{
 } 
 /* Copyright @ 2024 Aloha */
 .copyright{
+  color: white;
   display: flex;
-  align-items: center;
   justify-content: center;
   padding-bottom: 2rem;
 }
 /* Smallest to largest destops and laptops */
 @media screen and (min-width: 1200px) {
   /* Footer Information Spacing with width to give */
-  .footer-info{
+  /* Footer links aligns with the information layout grid */
+  .footer-info,
+  .footer-links{
     width: 20rem;
     margin-top: 5rem;
     margin-left: 5rem;
-  }
-  /* Footer links aligns with the information layout grid */
-  .footer-links{
-    margin-top: 5rem;
   }
   /* footer container changes to flex row for larger devices */
   .footer-container li{
